@@ -36,7 +36,7 @@ db.getCollection('Topics').aggregate(
 2. Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
 
 ```bash
-db.getCollection('Company_Drives').find({
+db.getCollection('Company_drives').find({
   driveDate: {
     $gte: '2020-10-15',
     $lte: '2020-10-31'
@@ -47,7 +47,7 @@ db.getCollection('Company_Drives').find({
 3. Find all the company drives and students who are appeared for the placement.
 
 ```bash
-db.getCollection('Company_Drives').aggregate(
+db.getCollection('Company_drives').aggregate(
   [
     {
       $lookup: {
@@ -91,7 +91,7 @@ db.getCollection('Codekata').aggregate(
 5. Find all the mentors with who has the mentee's count more than 15
 
 ```bash
-db.getCollection('Mentors').aggregate(
+db.getCollection('Mentor').aggregate(
   [{ $match: { menteeCount: { $gt: 15 } } }],
   { maxTimeMS: 60000, allowDiskUse: true }
 );
